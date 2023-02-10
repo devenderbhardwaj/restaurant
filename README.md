@@ -17,7 +17,7 @@ This is a java project for restaurant management
 The workspace contains two folders by default, where:
 - `src`: the folder to maintain sources
 - `lib`: the folder to maintain dependencies
-- `database description`: the folder to database dump file
+- `database`: the folder to database dump file
 
 ## Requirements
 - Java Virtual Machine
