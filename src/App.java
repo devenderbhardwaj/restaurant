@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.awt.event.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -185,39 +184,8 @@ public class App {
         heading.setBounds(50, 10, 1000, 75);
         frame.add(heading);
 
-        panel = new MainPanel(null);
-        panel.setLayout(null);
-        panel.setVisible(true);
-        frame.add(panel);
-
-        JLabel loginLabel = new JLabel("Log in as:");
-        loginLabel.setHorizontalAlignment(JLabel.CENTER);
-        loginLabel.setFont(new Font("Arial", Font.BOLD, 36));
-        loginLabel.setForeground(Color.orange);
-        loginLabel.setBounds(0, 100, 900, 60);
-        loginLabel.setVisible(true);
-        panel.add(loginLabel);
-
-        MyButton button1 = new MyButton("Customer");
-        button1.setBounds(450, 200, 250, 60);
-        panel.add(button1);
-
-        MyButton button2 = new MyButton("Owner");
-        button2.setBounds(450, 300, 250, 60);
-        panel.add(button2);
-
-        button1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                displayAsCustomer(panel);
-                ;
-            }
-        });
-        button2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                displayAsOwner(panel);
-            }
-        });
-
+        LandingPage landingPage = new LandingPage();
+        frame.add(landingPage);
         frame.setVisible(true);
     }
 
