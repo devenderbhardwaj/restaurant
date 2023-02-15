@@ -10,7 +10,7 @@ import javax.swing.*;
 
 import java.util.ArrayList;
 import java.util.Properties;
-//Test comment
+
 public class App {
     static Connection con;
     static MyFrame frame;
