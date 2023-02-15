@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.sql.*;
 import utilities.ProvidePadding;
 
@@ -78,26 +77,6 @@ public class Customer {
             e.printStackTrace();
         }
         return flag; 
-    }
-    
-    static public boolean addCustomer(Connection con, Scanner sc) throws SQLException {
-        System.out.print("Enter Name of customer for adding: ");
-        String name = sc.next();
-        System.out.print("Enter phone number of customer for adding: ");
-        String phone = sc.next();
-        boolean flag = false ;
-        Customer cus = new Customer(name, phone);
-        String query = "insert into customer (name, phone) values (?,?)";
-        PreparedStatement psmt = con.prepareStatement(query);
-        try {
-            psmt.setString(1,cus.name);
-            psmt.setString(2, cus.phone);
-            psmt.executeUpdate();
-            flag = true;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return flag;
     }
 
 }

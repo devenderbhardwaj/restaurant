@@ -47,5 +47,3 @@ public class Food {
         return flag; 
     }
 }
-
-
