@@ -132,20 +132,6 @@ class MyBill extends MainPanel {
                     System.out.println("x value: " + xField.getText());
                     System.out.println("y value: " + phoneField.getText());
                 }
-                // String[] options = { "Yes", "No" };
-
-                // int x = JOptionPane.showOptionDialog(
-                //         MyBill.this,
-                //         "Proceed with payment of " + String.valueOf(FoodOrder.generateBill(foodOrders)),
-                //         "Pay Bill",
-                //         JOptionPane.OK_CANCEL_OPTION,
-                //         JOptionPane.PLAIN_MESSAGE,
-                //         null,
-                //         options,
-                //         0);
-                // System.out.println(x);
-                // if (x == 0) {
-                // }
             }
         });
         this.add(payButton);
