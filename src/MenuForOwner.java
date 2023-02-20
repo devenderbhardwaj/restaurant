@@ -1,4 +1,3 @@
-import java.awt.event.*;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.awt.*;
@@ -83,23 +82,14 @@ class MenuJPanel2 extends JPanel {
     }
 }
 class MenuForOwner extends MainPanel {
-    
-    MyButton backButton = new MyButton("Back");
     MenuJPanel2 menuJPanel ;
     ColumnHeader2 ch = new ColumnHeader2();
 
-    public MenuForOwner(MainPanel prevPanel) {
+    public MenuForOwner(MainPanelBase prevPanel) {
         super(prevPanel);
         this.setBackground(ThemeColor.color);
         this.menuJPanel = new MenuJPanel2();
         this.add(menuJPanel);
-        backButton.setBounds(0, 0, 250, 60);
-        this.add(backButton);
-        backButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                back();
-            }
-        });
         ch.setBounds(0,60,1100,50);
         this.add(ch);
     }

@@ -2,9 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class LandingPage extends MainPanel {
+public class LandingPage extends MainPanelBase {
     LandingPage() {
-        super(null);
         this.setLayout(null);
         this.setVisible(true);
 

@@ -1,7 +1,6 @@
 import javax.swing.*;
 
 import java.awt.*;
-import java.awt.event.*;
 import java.sql.Connection;
 import java.util.ArrayList;
 
@@ -62,20 +61,10 @@ class CustomerListJPanel extends JPanel{
     }
 }
 public class DisCustomerPanel extends MainPanel{
-    JButton backButton = new JButton("Back");
     CustomerListJPanel customerListJPanel ;
 
     DisCustomerPanel(MainPanel prevPanel) {
         super(prevPanel);
-        backButton.setBounds(0, 0, 250, 60);
-        backButton.setForeground(Color.black);
-        backButton.setFont(new Font("Arial", Font.PLAIN, 28));
-        this.add(backButton);
-        backButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                back();
-            }
-        });
         
         customerListJPanel = new CustomerListJPanel();
         customerListJPanel.setBounds(getVisibleRect());

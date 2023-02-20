@@ -65,25 +65,16 @@ class BillJPanel extends JPanel {
 }
 
 class MyBill extends MainPanel {
-    JButton backButton = new JButton("Back");
     BillJPanel billJPanel;
     ColumnHeaderForBill ch = new ColumnHeaderForBill();
     JButton payButton = new JButton("Pay");
 
-    public MyBill(ArrayList<FoodOrder> foodOrders, MainPanel prevPanel) {
+    public MyBill(ArrayList<FoodOrder> foodOrders, MainPanelBase prevPanel) {
         super(prevPanel);
         this.setBackground(ThemeColor.color);
         this.billJPanel = new BillJPanel(foodOrders);
         this.add(billJPanel);
-        backButton.setBounds(0, 0, 250, 60);
-        backButton.setForeground(Color.black);
-        backButton.setFont(new Font("Arial", Font.PLAIN, 28));
-        this.add(backButton);
-        backButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                back();
-            }
-        });
+
         ch.setBounds(0, 60, 1100, 50);
         this.add(ch);
 
@@ -125,7 +116,7 @@ class MyBill extends MainPanel {
                     String phone = phoneField.getText();
                     try {
                         Customer.addCustomer(App.con, new Customer(name, phone));
-                        App.displayExitPanel(MyBill.this,xField.getText());
+                        App.displayExitPanel(xField.getText());
                     } catch (Exception ex) {
                         JOptionPane.showMessageDialog(prevPanel, ex.toString());
                     }

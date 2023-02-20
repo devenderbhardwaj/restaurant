@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.*;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -38,17 +39,30 @@ class MyFrame extends JFrame{
         this.setVisible(true);
     }
 }
-class MainPanel extends JPanel {
-    MainPanel backMainPanel ;
+class MainPanelBase extends JPanel {
+    MainPanelBase() {
+        this.setLayout(null);
+        this.setBackground(ThemeColor.color);  
+        this.setBounds(0,100,1100,600);
+    }
+}
+class MainPanel extends MainPanelBase {
+    MyButton backButton = new MyButton("Back");
+    MainPanelBase backMainPanel ;
+
     public void back() {
         this.setVisible(false);
         this.backMainPanel.setVisible(true);
     }
     
-    MainPanel(MainPanel prevPanel) {
+    MainPanel(MainPanelBase prevPanel) {
         this.backMainPanel = prevPanel;
-        this.setLayout(null);
-        this.setBackground(ThemeColor.color);  
-        this.setBounds(0,100,1100,600);
+        backButton.setBounds(0, 0, 250, 60);
+        this.add(backButton);
+        backButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                back();
+            }
+        });
     }
 }

@@ -108,23 +108,16 @@ class MenuJPanel extends JPanel {
 }
 
 public class AsCustomer extends MainPanel {
-    MyButton backButton = new MyButton("Back");
     MenuJPanel menuJPanel;
     ColumnHeader ch = new ColumnHeader();
     MyButton orderButton = new MyButton("Place Order");
 
-    public AsCustomer(MainPanel prevPanel) {
+    public AsCustomer(MainPanelBase prevPanel) {
         super(prevPanel); 
         
         this.menuJPanel = new MenuJPanel();
         this.add(menuJPanel);
-        backButton.setBounds(0, 0, 250, 60);
-        this.add(backButton);
-        backButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                back();
-            }
-        });
+        
         ch.setBounds(0, 60, 1100, 50);
         this.add(ch);
 
@@ -137,7 +130,5 @@ public class AsCustomer extends MainPanel {
             }
         });
         this.add(orderButton);
-    }
-
-    
+    }  
 }

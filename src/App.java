@@ -20,28 +20,28 @@ public class App {
     static DisCustomerPanel customerPanel;
     static ExitPanel exitPanel;
 
-    public static void displayMenuForOwner(MainPanel prevPanel) {
+    public static void displayMenuForOwner(MainPanelBase prevPanel) {
         asOwner.setVisible(false);
         menuForOwner = new MenuForOwner(prevPanel);
         menuForOwner.setVisible(true);
         App.frame.add(menuForOwner);
     }
 
-    public static void displayExitPanel(MainPanel prevPanel, String name) {
+    public static void displayExitPanel(String name) {
         myBill.setVisible(false);
-        exitPanel = new ExitPanel(prevPanel, name);
+        exitPanel = new ExitPanel(name);
         exitPanel.setVisible(true);
         App.frame.add(exitPanel);
     }
 
-    public static void displayMyBill(ArrayList<FoodOrder> foodOrders, MainPanel prevPanel) {
+    public static void displayMyBill(ArrayList<FoodOrder> foodOrders, MainPanelBase prevPanel) {
         asCustomer.setVisible(false);
         myBill = new MyBill(foodOrders, prevPanel);
         myBill.setVisible(true);
         App.frame.add(myBill);
     }
 
-    public static void displayAsCustomer(MainPanel prevPanel) {
+    public static void displayAsCustomer(MainPanelBase prevPanel) {
         prevPanel.setVisible(false);
         asCustomer = new AsCustomer(prevPanel);
         asCustomer.setVisible(true);
@@ -60,7 +60,7 @@ public class App {
                 ownerName = prop.getProperty("name");
                 ownerPassword = prop.getProperty("password");
 
-                JLabel nLabel = new JLabel("Name");
+                JLabel nLabel = new JLabel("      Name");
                 JTextField nameField = new JTextField(12);
                 JPanel namPanel = new JPanel();
                 namPanel.add(nLabel);
@@ -97,7 +97,7 @@ public class App {
         } else {
             JLabel headLabel = new JLabel("");
             headLabel.setText("Create a owner account: ");
-            JLabel nLabel = new JLabel("Name");
+            JLabel nLabel = new JLabel("      Name");
             JTextField xField = new JTextField(12);
             JPanel namPanel = new JPanel();
             namPanel.add(nLabel);
@@ -137,7 +137,7 @@ public class App {
         return false;
     }
 
-    public static void displayAsOwner(MainPanel prevPanel) {
+    public static void displayAsOwner(MainPanelBase prevPanel) {
         try {
             if (verifyOwner()) {
                 asOwner = new AsOwner(prevPanel);
@@ -188,5 +188,4 @@ public class App {
         frame.add(landingPage);
         frame.setVisible(true);
     }
-
 }
