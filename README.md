@@ -29,6 +29,6 @@ The workspace contains two folders by default, where:
 - Click ***Server*** on the main tool bar.
 - Select ***Data Import***.
 - Select ***import from self contained*** file.
-- Click the ***...*** and navigate to where your MySQL backup file is located , select the backup you want to load ( *restaurantdatabase.sql* in database *description description* folder of project), and click OK.
+- Click the ***...*** and navigate to where your MySQL backup file is located , select the backup you want to load ( *databaseDump.sql* in database *description description* folder of project), and click OK.
 - The dump file contain the schema so left ***Default Target Schema*** untouched.
 - Select Start Import on the bottom right.
